@@ -6,29 +6,22 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UITableViewController {
     var itemArray = [Item]()
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("itemPlist")
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 //        if let item = defaults.array(forKey: "arrayDizisi") as? [Item] {
 //            itemArray = item
 //        }
-     
-        print(dataFilePath)
-        
-        let newItem = Item()
-        newItem.toDo = "a"
-        newItem.done = true
-        itemArray.append(newItem)
-        let newItem2 = Item()
-        newItem.toDo = "b"
-        itemArray.append(newItem2)
-        let newItem3 = Item()
-        newItem.toDo = "c"
-        itemArray.append(newItem3)
+       // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        searchBar.delegate = self
+      loadData()
         
         
     }
@@ -39,7 +32,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoeyCell", for: indexPath) as! CustomTableViewCell
         let item = itemArray[indexPath.row]
-        cell.label?.text = item.toDo
+        cell.label?.text = item.title
         cell.accessoryType = item.done ? .checkmark : .none
         return cell
     }
@@ -54,8 +47,12 @@ class ViewController: UITableViewController {
         var textField = UITextField()
         let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add New Item", style: .default) { (action) in
-            let newItem = Item()
-            newItem.toDo = textField.text!
+            
+            
+         
+            let newItem = Item(context: self.context)
+            newItem.title = textField.text
+            newItem.done = false
             self.itemArray.append(newItem)
             self.saveData()
             print("success")
@@ -68,15 +65,43 @@ class ViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     func saveData(){
-        let encoder = PropertyListEncoder()
         do{
-            let data = try encoder.encode(itemArray)
-            try data.write(to: dataFilePath!)
+            try context.save()
         } catch {
-            print(error)
+         print(error)
         }
         self.tableView.reloadData()
     }
-    
+    func loadData(with request : NSFetchRequest<Item> = Item.fetchRequest()) {
+            do {
+                itemArray = try context.fetch(request)
+            } catch  {
+                print(error)
+            }
+        self.tableView.reloadData()
+        }
+    }
+//MARK:- SearchBar Delegate
+extension ViewController : UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        print(searchBar.text!)
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+         
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+     loadData(with: request)
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadData()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+           
+        }
+    }
 }
+    
+
 

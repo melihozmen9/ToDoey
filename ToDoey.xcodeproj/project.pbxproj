@@ -17,7 +17,6 @@
 		215FE18F297FFD230090E41C /* ToDoeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215FE18E297FFD230090E41C /* ToDoeyTests.swift */; };
 		215FE19A297FFD230090E41C /* ToDoeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215FE199297FFD230090E41C /* ToDoeyUITests.swift */; };
 		215FE1A8298000B60090E41C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215FE1A7298000B60090E41C /* CustomTableViewCell.swift */; };
-		21627B1F29813F2D0072820A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21627B1E29813F2D0072820A /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		215FE199297FFD230090E41C /* ToDoeyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoeyUITests.swift; sourceTree = "<group>"; };
 		215FE19B297FFD230090E41C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		215FE1A7298000B60090E41C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		21627B1E29813F2D0072820A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +111,6 @@
 				215FE180297FFD230090E41C /* Assets.xcassets */,
 				215FE182297FFD230090E41C /* LaunchScreen.storyboard */,
 				215FE185297FFD230090E41C /* Info.plist */,
-				215FE17D297FFD210090E41C /* ToDoey.xcdatamodeld */,
 			);
 			path = ToDoey;
 			sourceTree = "<group>";
@@ -156,7 +153,7 @@
 		21627B222981401D0072820A /* ModelData */ = {
 			isa = PBXGroup;
 			children = (
-				21627B1E29813F2D0072820A /* Item.swift */,
+				215FE17D297FFD210090E41C /* ToDoey.xcdatamodeld */,
 			);
 			path = ModelData;
 			sourceTree = "<group>";
@@ -294,7 +291,6 @@
 				215FE179297FFD210090E41C /* ViewController.swift in Sources */,
 				215FE1A8298000B60090E41C /* CustomTableViewCell.swift in Sources */,
 				215FE175297FFD210090E41C /* AppDelegate.swift in Sources */,
-				21627B1F29813F2D0072820A /* Item.swift in Sources */,
 				215FE177297FFD210090E41C /* SceneDelegate.swift in Sources */,
 				215FE17F297FFD210090E41C /* ToDoey.xcdatamodeld in Sources */,
 			);
