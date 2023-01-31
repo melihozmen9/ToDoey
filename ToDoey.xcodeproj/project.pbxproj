@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214E61CE2988FB7400F4B18A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214E61CD2988FB7400F4B18A /* CategoryCell.swift */; };
+		214FCF5E2988E84C0006AB12 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214FCF5D2988E84C0006AB12 /* CategoryTableViewController.swift */; };
 		215FE175297FFD210090E41C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215FE174297FFD210090E41C /* AppDelegate.swift */; };
 		215FE177297FFD210090E41C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215FE176297FFD210090E41C /* SceneDelegate.swift */; };
 		215FE179297FFD210090E41C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215FE178297FFD210090E41C /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		214E61CD2988FB7400F4B18A /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		214FCF5D2988E84C0006AB12 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		215FE171297FFD210090E41C /* ToDoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		215FE174297FFD210090E41C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		215FE176297FFD210090E41C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				215FE178297FFD210090E41C /* ViewController.swift */,
+				214FCF5D2988E84C0006AB12 /* CategoryTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			children = (
 				215FE1A7298000B60090E41C /* CustomTableViewCell.swift */,
 				215FE17A297FFD210090E41C /* Main.storyboard */,
+				214E61CD2988FB7400F4B18A /* CategoryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,8 +297,10 @@
 				215FE179297FFD210090E41C /* ViewController.swift in Sources */,
 				215FE1A8298000B60090E41C /* CustomTableViewCell.swift in Sources */,
 				215FE175297FFD210090E41C /* AppDelegate.swift in Sources */,
+				214E61CE2988FB7400F4B18A /* CategoryCell.swift in Sources */,
 				215FE177297FFD210090E41C /* SceneDelegate.swift in Sources */,
 				215FE17F297FFD210090E41C /* ToDoey.xcdatamodeld in Sources */,
+				214FCF5E2988E84C0006AB12 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
