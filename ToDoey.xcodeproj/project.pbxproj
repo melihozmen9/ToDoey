@@ -180,6 +180,8 @@
 			dependencies = (
 			);
 			name = ToDoey;
+			packageProductDependencies = (
+			);
 			productName = ToDoey;
 			productReference = 215FE171297FFD210090E41C /* ToDoey.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +253,8 @@
 				Base,
 			);
 			mainGroup = 215FE168297FFD210090E41C;
+			packageReferences = (
+			);
 			productRefGroup = 215FE172297FFD210090E41C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

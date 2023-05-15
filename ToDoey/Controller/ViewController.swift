@@ -25,6 +25,7 @@ class ViewController: UITableViewController {
 //            itemArray = item
 //        }
        // print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        tableView.rowHeight = 50
         searchBar.delegate = self
       loadData()
         
@@ -46,6 +47,17 @@ class ViewController: UITableViewController {
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         self.saveData()
         tableView.deselectRow(at: indexPath, animated: true )
+    }
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            context.delete(itemArray[indexPath.row])
+            itemArray.remove(at: indexPath.row)
+            saveData()
+        }
     }
     
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
